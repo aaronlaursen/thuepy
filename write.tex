@@ -1,0 +1,361 @@
+
+\documentclass[12pt]{article}
+
+
+
+\usepackage{fancyvrb}
+\usepackage{color}
+\usepackage[ascii]{inputenc}
+\usepackage{courier}
+\usepackage{helvet}
+\usepackage{fullpage}
+\usepackage{alltt}
+\usepackage{times}
+
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+\newcommand{\keyw}[1]{\ \mbox{\bf #1}\ }
+\newcommand{\pname}[1]{\ \mbox{\sc #1}\ }
+\newcommand{\vname}[1]{\mbox{\em #1}}
+\newcommand{\num}[1]{\ \mbox{#1}\ }
+\newcommand{\txt}[1]{\ \mbox{#1}\ }
+\newcommand{\ind} {\hspace{5mm}}
+
+\newcounter{algstep}
+\newcommand{\firststep}{\setcounter{algstep}{1} \thealgstep.}
+\newcommand{\nextstep}{\stepcounter{algstep} \thealgstep.}
+
+\usepackage{fullpage}
+\usepackage{alltt}
+\usepackage{times}
+\usepackage{courier}
+\usepackage{helvet}
+\usepackage{graphicx}
+\usepackage{setspace}
+\doublespacing
+\setlength{\parskip}{3mm}
+\usepackage{framed}
+
+\begin{document}
+\begin{center}
+
+The Thue Language
+
+COMP 261, Spring 2013
+
+Team Six: Aaron, Jenna, Kenny, Nolan
+\end{center}
+For our team research project, we decided to examine the Thue programming language, an extremely simple progamming language with a strong relationship to the Turing machine.  Due to the simplicity of Thue, we were able to write an interpreter for the language using Python.  In demonstrating our team's research, we will first cover the background and syntax of the Thue language, followed by the complete code of our Thue interpreter.
+
+\section{Semi-Thue Systems:}
+The basis of the Thue Language is the concept of the Semi-Thue System, named after the Norwegian mathematician Axel Thue.  It is a string rewriting system that is isomorphic to a universal grammar, and thus is Turing-complete.  In this way, a simple way of looking at Semi-Thue Systems is to see them as similar to a CFG, the difference being that Semi-Thue Systems can describe Turing Machines, rather than just Pushdown Automata. One can build a Turing Machine that can simulate the derivation of a string with a Semi-Thue System. This Turing Machine would be non-deterministic to account for the possibility of the nondeterministic rules in the Semi-Thue System. 
+
+What is interesting about Semi-Thue systems is that they build upon the concept of a Context Free Grammar; a CFG can be seen as simply a Semi-Thue System with restrictions applied:
+
+\begin{enumerate}
+	\item There must be a clear distinction between terminals and variable symbols
+	\item All rules must have one single, nonterminal variable as the LHS
+	\item All complete dervivations must begin with one single start variable, and end with a string consisting of only terminal symbols
+\end{enumerate}
+
+ 
+
+\section{The Thue Programming Language:}
+
+The programming language, Thue, implements the Semi-Thue System into a minimalistic language; the language, itself, belongs to a family of programming languages known as Turing Tarpits: those that exhibit Turing-completeness while having as few linguistic elements as possible.  The syntax of Thue is thus remarkably simple, and quite similar to the creation of a CFG.  Setting up the transition rules of a Thue program follows this pattern:
+\[
+LHS ::= RHS
+\]
+To specify characters or strings to be output, a tilde (\textasciitilde) is added before the RHS, otherwise the argument will be interpreted as a transition:
+
+$LHS ::= $\textasciitilde$ Hello$
+
+Finally, an additional ::= is added at the end of the rules section; the following line will be interpreted as the input string. Let us look at this in the context of the classic Hello World! program:
+\begin{center}
+a::=\textasciitilde Hello World!
+
+::=
+
+a
+\end{center}
+This program outputs Hello World!, since it has symbol a as its input, and a~Hello World!  This is simple enough, so let us examine how Thue can express complex transitions that are not possible on CFGs:
+\begin{center}
+    b::=\textasciitilde 0
+
+b::=\textasciitilde1
+
+ac::=abc
+
+::=
+
+abc
+\end{center}
+This shows two major features of Thue, nondeterminism and long LHS support.  When run, this code will randomly and recursively add zeroes and ones to the output string in an infinite loop.  This is possible through the transition rule ac::=abc, which demonstrates Thue ability to nondeterministically choose zero or one and support a long LHS. 
+
+\section{A Simple Thue Interpreter}
+As part of our project, we wrote a simple Thue interpreter in Python. 
+While any number of languages could have been chosen, and a self-hosting
+Thue would have been more impressive, Python was chosen primarily for 
+its short development cycle, ease of string manipulation, and familiarity 
+to the author. The program was written from scratch following the 
+language specification at \emph{esolangs.org/wiki/Thue}, and as such
+may have a few unexpected, and undocumented, ``features'', but to the 
+current knowledge of the authors has no bugs.
+
+The code itself is fairly short and can be seen below:
+\singlespacing
+\begin{framed}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c}{\PYZsh{}!/usr/bin/python}
+
+\PY{c}{\PYZsh{} thue.py \PYZhy{} Aaron Laursen}
+\PY{c}{\PYZsh{}}
+\PY{c}{\PYZsh{} written for python version 3.3.1}
+\PY{c}{\PYZsh{}}
+\PY{c}{\PYZsh{} run as:}
+\PY{c}{\PYZsh{} python thue.py  rules.txt}
+\PY{c}{\PYZsh{}}
+\PY{c}{\PYZsh{} also accepts rules on stdin}
+
+\PY{k+kn}{import} \PY{n+nn}{fileinput}
+\PY{k+kn}{import} \PY{n+nn}{random}
+
+\PY{k}{def} \PY{n+nf}{main}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+    \PY{n}{start}\PY{p}{,} \PY{n}{rules} \PY{o}{=} \PY{n}{readRules}\PY{p}{(}\PY{p}{)}
+    \PY{k}{print}\PY{p}{(}\PY{n}{start}\PY{p}{)}
+    \PY{k}{print}\PY{p}{(}\PY{n}{rules}\PY{p}{)}
+    \PY{k}{print}\PY{p}{(}\PY{n}{runReps}\PY{p}{(}\PY{n}{start}\PY{p}{,} \PY{n}{rules}\PY{p}{)}\PY{p}{)}
+    \PY{k}{return}
+
+\PY{k}{def} \PY{n+nf}{readRules}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+    \PY{c}{\PYZsh{} reads in a rules file of the form:}
+    \PY{c}{\PYZsh{}}
+    \PY{c}{\PYZsh{} lhs1::=rhs1 }
+    \PY{c}{\PYZsh{} lhs2::=rhs2}
+    \PY{c}{\PYZsh{}}
+    \PY{c}{\PYZsh{} ::=start\PYZus{}state}
+    \PY{c}{\PYZsh{}}
+    \PY{c}{\PYZsh{} note that whitespace within lines is relevant,}
+    \PY{c}{\PYZsh{} empty lines are ignored,}
+    \PY{c}{\PYZsh{} literal \PYZdq{}\PYZbs{}n\PYZdq{} in file if replaced with newline}
+    \PY{n}{rules}\PY{o}{=}\PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+    \PY{n}{start}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZdq{}}
+    \PY{k}{for} \PY{n}{line} \PY{o+ow}{in} \PY{n}{fileinput}\PY{o}{.}\PY{n}{input}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+        \PY{k}{if} \PY{l+s}{\PYZdq{}}\PY{l+s}{::=}\PY{l+s}{\PYZdq{}} \PY{o+ow}{not} \PY{o+ow}{in} \PY{n}{line}\PY{p}{:}
+            \PY{k}{continue}
+        \PY{n}{line}\PY{o}{=}\PY{n}{line}\PY{p}{[}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}\PYZbs{}}\PY{l+s}{n}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{p}\PY{o}{=}\PY{n}{line}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{::=}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+        \PY{k}{if} \PY{n}{p}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{==}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZdq{}}\PY{p}{:}
+            \PY{n}{start}\PY{o}{=}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+            \PY{k}{continue}
+        \PY{k}{if} \PY{n}{p}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o+ow}{not} \PY{o+ow}{in} \PY{n}{rules}\PY{p}{:}
+            \PY{n}{rules}\PY{p}{[}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{]}\PY{o}{=}\PY{p}{[}\PY{p}{]}
+        \PY{n}{rules}\PY{p}{[}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{]}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+    \PY{k}{return} \PY{n}{start}\PY{p}{,} \PY{n}{rules}
+
+\PY{k}{def} \PY{n+nf}{parseRep}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{:}
+    \PY{c}{\PYZsh{} takes care of \PYZdq{}:::\PYZdq{} and \PYZdq{}\PYZti{}\PYZdq{} in rpelacement}
+    \PY{k}{while} \PY{l+s}{\PYZdq{}}\PY{l+s}{:::}\PY{l+s}{\PYZdq{}} \PY{o+ow}{in} \PY{n}{s}\PY{p}{:}
+        \PY{n}{s}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{:::}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n+nb}{input}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+    \PY{k}{if} \PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZti{}}\PY{l+s}{\PYZdq{}} \PY{o+ow}{in} \PY{n}{s}\PY{p}{:}
+        \PY{n}{p}\PY{o}{=}\PY{n}{s}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZti{}}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}
+        \PY{n}{s}\PY{o}{=}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+        \PY{k}{print}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+    \PY{k}{return} \PY{n}{s}
+
+\PY{k}{def} \PY{n+nf}{findAll}\PY{p}{(}\PY{n}{l}\PY{p}{,}\PY{n}{s}\PY{p}{)}\PY{p}{:}
+    \PY{c}{\PYZsh{}finds all occurances of l in s}
+    \PY{k}{if} \PY{n}{l}\PY{o}{==}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZdq{}} \PY{o+ow}{and} \PY{n}{s}\PY{o}{!=}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZdq{}}\PY{p}{:}
+        \PY{k}{return}\PY{p}{[}\PY{p}{]}
+    \PY{k}{if} \PY{n}{l}\PY{o}{==}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZdq{}} \PY{o+ow}{and} \PY{n}{s}\PY{o}{==}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZdq{}}\PY{p}{:}
+        \PY{k}{return} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{p}{]}
+    \PY{n}{p}\PY{o}{=}\PY{p}{[}\PY{p}{]}
+    \PY{n}{i}\PY{o}{=}\PY{n}{s}\PY{o}{.}\PY{n}{find}\PY{p}{(}\PY{n}{l}\PY{p}{)}
+    \PY{k}{while} \PY{n}{i} \PY{o}{!=}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{:}
+        \PY{n}{p}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+        \PY{n}{i}\PY{o}{=}\PY{n}{s}\PY{o}{.}\PY{n}{find}\PY{p}{(}\PY{n}{l}\PY{p}{,}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+    \PY{k}{return} \PY{n}{p}
+
+\PY{k}{def} \PY{n+nf}{runReps}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{n}{rules}\PY{p}{)}\PY{p}{:}
+    \PY{c}{\PYZsh{} repeatedly applies rules to state until it cannot apply more}
+    \PY{k}{while} \PY{n+nb+bp}{True}\PY{p}{:}
+        \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{State:}\PY{l+s}{\PYZdq{}}\PY{o}{+}\PY{n}{s}\PY{p}{)}
+        \PY{n}{cand}\PY{o}{=}\PY{p}{[}\PY{p}{]} \PY{c}{\PYZsh{}generate all posible rule applications}
+        \PY{k}{for} \PY{n}{l} \PY{o+ow}{in} \PY{n}{rules}\PY{p}{:}
+            \PY{k}{if} \PY{n}{l} \PY{o+ow}{not} \PY{o+ow}{in} \PY{n}{s}\PY{p}{:} 
+                \PY{k}{continue}
+            \PY{k}{for} \PY{n}{p} \PY{o+ow}{in} \PY{n}{findAll}\PY{p}{(}\PY{n}{l}\PY{p}{,}\PY{n}{s}\PY{p}{)}\PY{p}{:}
+                \PY{k}{for} \PY{n}{r} \PY{o+ow}{in} \PY{n}{rules}\PY{p}{[}\PY{n}{l}\PY{p}{]}\PY{p}{:}
+                    \PY{n}{cand}\PY{o}{.}\PY{n}{append}\PY{p}{(} \PY{p}{(}\PY{n}{l}\PY{p}{,}\PY{n}{r}\PY{p}{,}\PY{n}{p}\PY{p}{)} \PY{p}{)}
+        \PY{k}{if} \PY{n+nb}{len}\PY{p}{(}\PY{n}{cand}\PY{p}{)}\PY{o}{==}\PY{l+m+mi}{0}\PY{p}{:}
+            \PY{k}{return} \PY{n}{s}
+        \PY{n}{i}\PY{o}{=}\PY{n}{random}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n+nb}{len}\PY{p}{(}\PY{n}{cand}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)} \PY{c}{\PYZsh{}pick a rule randomly}
+        \PY{n}{s}\PY{o}{=}\PY{n}{applyRule}\PY{p}{(} \PY{n}{s}\PY{p}{,}\PY{n}{cand}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{p}{)}
+
+\PY{k}{def} \PY{n+nf}{applyRule}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{n}{can}\PY{p}{)}\PY{p}{:}
+    \PY{c}{\PYZsh{} takes a state and a candidate tuple and returns new state}
+    \PY{n}{rhs} \PY{o}{=} \PY{n}{parseRep}\PY{p}{(}\PY{n}{can}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+    \PY{n}{s}\PY{o}{=} \PY{n}{s}\PY{p}{[}\PY{p}{:}\PY{n}{can}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]} \PY{o}{+} \PY{n}{rhs} \PY{o}{+} \PY{n}{s}\PY{p}{[}\PY{n}{can}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{+}\PY{n+nb}{len}\PY{p}{(}\PY{n}{can}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{:}\PY{p}{]}
+    \PY{k}{return} \PY{n}{s}
+
+\PY{n}{main}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{framed}
+\doublespacing
+
+A set of rules for this interpreter has the form:
+\singlespacing
+\begin{framed}
+    \begin{alltt}
+lhs\_1::=rhs\_1
+lhs\_2::=rhs\_2
+lhs\_3::=rhs\_3
+\ldots
+lhs\_n::=rhs\_n
+::=$start\_state$
+    \end{alltt}
+\end{framed}
+\doublespacing
+
+For example, the rules to add one to the input $\_1111111111\_$ might
+be represented as:
+\singlespacing
+\begin{framed}
+    \begin{alltt}
+1\_::=1++
+0\_::=1
+
+01++::=10
+11++::=1++0
+
+\_0::=\_
+\_1++::=10
+
+::=\_1111111111\_
+    \end{alltt}
+\end{framed}
+\doublespacing
+
+The program will then output the start state, rules, and state trace (series of states after each 
+replacement), followed by the final state. For the above example, this should be:
+\singlespacing\begin{framed}\begin{alltt}
+_1111111111_
+\{'_0': ['_'], '1_': ['1++'], '0_': ['1'], '01++': ['10'], 
+'_1++': ['10'], '11++': ['1++0']\}
+State:_1111111111_
+State:_1111111111++
+State:_111111111++0
+State:_11111111++00
+State:_1111111++000
+State:_111111++0000
+State:_11111++00000
+State:_1111++000000
+State:_111++0000000
+State:_11++00000000
+State:_1++000000000
+State:10000000000
+10000000000
+\end{alltt}\end{framed}\doublespacing
+
+In many ways, the code speaks for itself, and the reader it encouraged to run it at their leisure (a copy
+in a more convenient form should have been included with this document). Please note, however, that it 
+is written for Python 3, and will fail on earlier versions.
+
+\section{Conclusion}
+Throughout this paper, we have introduced the Thue language, and the systems 
+underlying it. We also present our own program capable of interpreting the Language.
+This new formulation shows yet another Turing-equivalent, and new way of viewing the
+power of computations.
+
+\end{document}
